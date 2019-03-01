@@ -5,13 +5,17 @@
         padding: 15px;
     }
 
-    &__disabled {
+    &__not-available {
         border-radius: 4px;
         padding: 15px;
         opacity: 0.3;
         
         * {
             cursor: not-allowed;
+        }
+
+        &-disclaimer {
+            display: block;
         }
     }
 }

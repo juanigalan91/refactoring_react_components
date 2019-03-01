@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const namespace = 'images';
 const Images = (props) => {
-    const { images, title } = props;
+    const { images, title, notAvailableDisclaimer } = props;
     return (
         <div className={namespace}>
             <h1 key="title" className={`${namespace}__title`}>{title}</h1>
@@ -14,12 +14,16 @@ const Images = (props) => {
                         const baseClassName = 'image';
                         const className = classNames(baseClassName, {
                             [`${baseClassName}__featured`]: image.isFeatured,
-                            [`${baseClassName}__disabled`]: image.isDisabled,
+                            [`${baseClassName}__not-available`]: !image.isAvailable,
                         });
 
                         return (
                             <li className={className} key={image.key}>
                                 <a href={image.link} className={`${baseClassName}__link`} target="_blank" rel="noopener noreferrer">
+                                    {
+                                        !image.isAvailable
+                                        && <span className={`${baseClassName}__not-available-disclaimer`}>{notAvailableDisclaimer}</span>
+                                    }
                                     <img
                                         src={image.src}
                                         alt={image.title}
@@ -38,7 +42,8 @@ const Images = (props) => {
 
 Images.propTypes = {
     images: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    notAvailableDisclaimer: PropTypes.string.isRequired
 };
 
 export default Images;
