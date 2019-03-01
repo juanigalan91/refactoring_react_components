@@ -3,6 +3,7 @@
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     padding: 20px;
+    margin-bottom: 20px;
 
     &__list {
         display: flex;
@@ -17,22 +18,22 @@
         margin: 0 0 20px 0;
     }
 
-    &__link {
-        height: 200px;
-        display: inline-block;
-        text-decoration: none;
-        color: black;
-    }
-
-    &__img {
-        height: 100%;
-    }
-
-    &__img_title {
-        display: block;
-    }
-
     .image {
         display: initial;
+
+        &__link {
+            height: 200px;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+        }
+    
+        &__img {
+            height: 100%;
+        }
+    
+        &__img_title {
+            display: block;
+        }
     }
 }

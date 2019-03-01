@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/juanigalan91/refactoring_react_components#readme",
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   },
