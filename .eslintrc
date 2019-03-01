@@ -8,6 +8,7 @@
     "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
     "no-unused-expressions": "off",
     "react/jsx-filename-extension": "off",
+    "no-console": "off",
     "global-require": "off",
     "no-underscore-dangle": "off",
     "comma-dangle": "off",
