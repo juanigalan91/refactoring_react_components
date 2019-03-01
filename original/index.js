@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './original.css';
 
 const root = document.getElementById('root');
 const title = (
