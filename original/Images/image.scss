@@ -1,10 +1,16 @@
 .images {
+    display: flex;
+    flex-direction: row;
     &__link {
         height: 200px;
-        display: block;
+        display: inline-block;
     }
 
     &__img {
         height: 100%;
+    }
+
+    .image {
+        display: initial;
     }
 }

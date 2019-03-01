@@ -5,19 +5,21 @@ const namespace = 'images';
 const Images = (props) => {
     const { images } = props;
     return (
-        <div className={namespace}>
+        <ul className={namespace}>
             {
                 images.map(image => (
-                    <a href={image.link} className={`${namespace}__link`}>
-                        <img
-                            src={image.src}
-                            alt={image.title}
-                            className={`${namespace}__img`}
-                        />
-                    </a>
+                    <li className="image">
+                        <a href={image.link} className={`${namespace}__link`}>
+                            <img
+                                src={image.src}
+                                alt={image.title}
+                                className={`${namespace}__img`}
+                            />
+                        </a>
+                    </li>
                 ))
             }
-        </div>
+        </ul>
     );
 };
 
