@@ -1,0 +1,20 @@
+{
+  "extends": "bragi",
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "no-unused-expressions": "off",
+    "global-require": "off",
+    "no-underscore-dangle": "off",
+    "comma-dangle": "off",
+    "import/no-dynamic-require": "off",
+    "react/prefer-stateless-function": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-indent": "off",
+    "react/forbid-prop-types": "off",
+    "react/no-array-index-key": "off"
+  }
+}
