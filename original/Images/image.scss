@@ -1,13 +1,35 @@
 .images {
-    display: flex;
-    flex-direction: row;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    padding: 20px;
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+    }
+
     &__link {
         height: 200px;
         display: inline-block;
+        text-decoration: none;
+        color: black;
     }
 
     &__img {
         height: 100%;
+    }
+
+    &__img_title {
+        display: block;
     }
 
     .image {
