@@ -1,5 +1,5 @@
 {
-  "extends": "bragi",
+  "extends": "airbnb",
   "env": {
     "jest": true
   },
@@ -7,6 +7,7 @@
     "indent": ["error", 4],
     "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
     "no-unused-expressions": "off",
+    "react/jsx-filename-extension": "off",
     "global-require": "off",
     "no-underscore-dangle": "off",
     "comma-dangle": "off",
