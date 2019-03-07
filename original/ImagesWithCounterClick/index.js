@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -14,23 +15,28 @@ const useTracking = () => {
 
     console.log(`Items carousel was clicked ${count} times.`);
 
-    return track;
+    return [count, track];
 };
 
 const Images = (props) => {
     const { images, title, notAvailableDisclaimer } = props;
-    const track = useTracking();
+    const [count, track] = useTracking();
 
     return (
         <div className={namespace}>
-            <h1 key="title" className={`${namespace}__title`}>{title}</h1>
+            <h1 key="title" className={`${namespace}__title`}>
+                {title}
+            </h1>
+            <span className={`${namespace}__visits`}>Visits: {count}</span>
             <ul key={namespace} className={`${namespace}__list`}>
                 {
                     images.map((image) => {
-                        const handleClick = () => {
+                        const handleClick = (e) => {
                             if (image.isAvailable) {
                                 console.log(`Image clicked was #${image.key}`);
                                 track();
+                            } else {
+                                e.preventDefault();
                             }
                         };
                         const baseClassName = 'image';
@@ -47,6 +53,7 @@ const Images = (props) => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={handleClick}
+                                    alt={image.title}
                                 >
                                     {
                                         !image.isAvailable
