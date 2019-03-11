@@ -1,0 +1,12 @@
+@import './Images/styles.scss';
+@import './ImagesWithFeaturedAndDisabled/styles.scss';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+}
+
+#root {
+    width: 80%;
+    margin: 0 auto;
+}
