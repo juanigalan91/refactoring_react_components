@@ -2,7 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { render, cleanup, fireEvent } from 'react-testing-library';
 import Images from '..';
-import images from '../../../data';
+import images from '../../../../../data';
 
 afterEach(cleanup);
 
