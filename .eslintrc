@@ -17,6 +17,7 @@
     "react/jsx-indent-props": "off",
     "react/jsx-indent": "off",
     "react/forbid-prop-types": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "max-len": ["error", { "code": 200 }]
   }
 }

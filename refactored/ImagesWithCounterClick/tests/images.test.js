@@ -27,7 +27,7 @@ describe('Images component', () => {
         fireEvent.click(textEl);
 
         const visits = container.querySelector('.images__visits');
-        expect(visits.textContent).toBe('Visits: 1');
+        expect(visits.textContent).toBe('Visits:1');
     });
 
     it('does not execute hook since item is not available', () => {
@@ -37,6 +37,6 @@ describe('Images component', () => {
         fireEvent.click(textEl);
 
         const visits = container.querySelector('.images__visits');
-        expect(visits.textContent).toBe('Visits: 0');
+        expect(visits.textContent).toBe('Visits:0');
     });
 });

@@ -13,7 +13,7 @@ const Images = (props) => {
                         const baseClassName = 'image';
 
                         return (
-                            <li className={baseClassName} key={image.key}>
+                            <li className={baseClassName} key={image.id}>
                                 <a href={image.link} className={`${baseClassName}__link`} target="_blank" rel="noopener noreferrer">
                                     <img
                                         src={image.src}

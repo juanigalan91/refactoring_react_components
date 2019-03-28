@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image component renders the images component with the list of images 1`] = `
+<li
+  className="image image__featured"
+>
+  <a
+    alt="Red Dead Redemption 2"
+    className="image__link"
+    href="https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=sr_1_3?keywords=ps4+games&qid=1551459125&s=gateway&sr=8-3"
+    onClick={[Function]}
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="Red Dead Redemption 2"
+      className="image__img"
+      src="https://m.media-amazon.com/images/I/81z80lFufgL._AC_UL872_FMwebp_QL65_.jpg"
+    />
+    <h3
+      className="image__img_title"
+    >
+      Red Dead Redemption 2
+    </h3>
+  </a>
+</li>
+`;

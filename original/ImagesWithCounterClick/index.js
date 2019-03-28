@@ -46,7 +46,7 @@ const Images = (props) => {
                         });
 
                         return (
-                            <li className={className} key={image.key}>
+                            <li className={className} key={image.id}>
                                 <a
                                     href={image.link}
                                     className={`${baseClassName}__link`}

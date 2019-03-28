@@ -10,7 +10,7 @@ const Images = (props) => {
             <h1 key="title" className={`${namespace}__title`}>{title}</h1>
             <ul key={namespace} className={`${namespace}__list`}>
                 {
-                    images.map(image => <Image {...image} />)
+                    images.map(image => <Image {...image} key={image.id} />)
                 }
             </ul>
         </div>
