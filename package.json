@@ -7,7 +7,8 @@
     "start-dev": "webpack-dev-server --mode development",
     "start-dev-refactored": "webpack-dev-server --mode development --config webpack.refactored.config.js",
     "start": "webpack-dev-server --mode production",
-    "test": "NODE_ENV=test jest --coverage --useStderr --config jest.config.js"
+    "test": "NODE_ENV=test jest --coverage --useStderr --config jest.config.js",
+    "lint": "eslint original/** refactored/**"
   },
   "repository": {
     "type": "git",

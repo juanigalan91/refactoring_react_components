@@ -12,8 +12,8 @@ const component = (
 );
 
 describe('Images component', () => {
-    it('renders the images component with the list of images', () => {
-        const renderer = new ShallowRenderer();
-        expect(renderer.render(component)).toMatchSnapshot();
-    });
+  it('renders the images component with the list of images', () => {
+    const renderer = new ShallowRenderer();
+    expect(renderer.render(component)).toMatchSnapshot();
+  });
 });

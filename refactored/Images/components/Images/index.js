@@ -4,8 +4,8 @@ import Image from '../Image';
 
 const namespace = 'images';
 const Images = (props) => {
-    const { images, title } = props;
-    return (
+  const { images, title } = props;
+  return (
         <div className={namespace}>
             <h1 key="title" className={`${namespace}__title`}>{title}</h1>
             <ul key={namespace} className={`${namespace}__list`}>
@@ -14,12 +14,12 @@ const Images = (props) => {
                 }
             </ul>
         </div>
-    );
+  );
 };
 
 Images.propTypes = {
-    images: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired
+  images: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default Images;

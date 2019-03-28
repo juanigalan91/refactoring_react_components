@@ -15,28 +15,28 @@ const component = (
 );
 
 describe('Images component', () => {
-    it('renders the images component with the list of images', () => {
-        const renderer = new ShallowRenderer();
-        expect(renderer.render(component)).toMatchSnapshot();
-    });
+  it('renders the images component with the list of images', () => {
+    const renderer = new ShallowRenderer();
+    expect(renderer.render(component)).toMatchSnapshot();
+  });
 
-    it('executes the tracking hook when the image is clicked and adds to visits', () => {
-        const { getByAltText, container } = render(component);
+  it('executes the tracking hook when the image is clicked and adds to visits', () => {
+    const { getByAltText, container } = render(component);
 
-        const textEl = getByAltText('Red Dead Redemption 2');
-        fireEvent.click(textEl);
+    const textEl = getByAltText('Red Dead Redemption 2');
+    fireEvent.click(textEl);
 
-        const visits = container.querySelector('.images__visits');
-        expect(visits.textContent).toBe('Visits:1');
-    });
+    const visits = container.querySelector('.images__visits');
+    expect(visits.textContent).toBe('Visits:1');
+  });
 
-    it('does not execute hook since item is not available', () => {
-        const { getByAltText, container } = render(component);
+  it('does not execute hook since item is not available', () => {
+    const { getByAltText, container } = render(component);
 
-        const textEl = getByAltText('Assassins creed Odyssey');
-        fireEvent.click(textEl);
+    const textEl = getByAltText('Assassins creed Odyssey');
+    fireEvent.click(textEl);
 
-        const visits = container.querySelector('.images__visits');
-        expect(visits.textContent).toBe('Visits:0');
-    });
+    const visits = container.querySelector('.images__visits');
+    expect(visits.textContent).toBe('Visits:0');
+  });
 });

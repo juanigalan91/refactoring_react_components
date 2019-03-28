@@ -4,9 +4,9 @@ import Image from '../Image';
 
 const namespace = 'images';
 const Images = (props) => {
-    const { images, title, notAvailableDisclaimer } = props;
+  const { images, title, notAvailableDisclaimer } = props;
 
-    return (
+  return (
         <div className={namespace}>
             <h1 key="title" className={`${namespace}__title`}>
                 {title}
@@ -14,18 +14,18 @@ const Images = (props) => {
             <ul key={namespace} className={`${namespace}__list`}>
                 {
                     images.map(
-                        image => <Image {...image} notAvailableDisclaimer={notAvailableDisclaimer} key={image.id} />
+                      image => <Image {...image} notAvailableDisclaimer={notAvailableDisclaimer} key={image.id} />
                     )
                 }
             </ul>
         </div>
-    );
+  );
 };
 
 Images.propTypes = {
-    images: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-    notAvailableDisclaimer: PropTypes.string.isRequired
+  images: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  notAvailableDisclaimer: PropTypes.string.isRequired
 };
 
 export default Images;

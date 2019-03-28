@@ -5,10 +5,10 @@ import useTracking from '../../hooks/useTracking';
 
 const namespace = 'images';
 const Images = (props) => {
-    const { images, title, notAvailableDisclaimer } = props;
-    const [count, track] = useTracking('Times the image carousel was clicked:');
+  const { images, title, notAvailableDisclaimer } = props;
+  const [count, track] = useTracking('Times the image carousel was clicked:');
 
-    return (
+  return (
         <div className={namespace}>
             <h1 key="title" className={`${namespace}__title`}>
                 {title}
@@ -20,18 +20,18 @@ const Images = (props) => {
             <ul key={namespace} className={`${namespace}__list`}>
                 {
                     images.map(
-                        image => <Image {...image} track={track} notAvailableDisclaimer={notAvailableDisclaimer} key={image.id} />
+                      image => <Image {...image} track={track} notAvailableDisclaimer={notAvailableDisclaimer} key={image.id} />
                     )
                 }
             </ul>
         </div>
-    );
+  );
 };
 
 Images.propTypes = {
-    images: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-    notAvailableDisclaimer: PropTypes.string.isRequired
+  images: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  notAvailableDisclaimer: PropTypes.string.isRequired
 };
 
 export default Images;

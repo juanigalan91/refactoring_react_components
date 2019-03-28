@@ -9,12 +9,12 @@ import images from '../data';
 /* global document */
 const root = document.getElementById('root');
 const baseProps = {
-    images,
-    title: 'Best PS4 Games of 2018'
+  images,
+  title: 'Best PS4 Games of 2018'
 };
 
 ReactDOM.render(
-    [
+  [
         <Images
             key="images"
             {...baseProps}
@@ -31,6 +31,6 @@ ReactDOM.render(
             title="Featured PS4 Games of 2018"
             notAvailableDisclaimer="Not Available"
         />
-    ],
-    root
+  ],
+  root
 );

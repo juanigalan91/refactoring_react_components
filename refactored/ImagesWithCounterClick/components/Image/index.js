@@ -4,64 +4,64 @@ import classNames from 'classnames';
 
 const namespace = 'image';
 const Image = (props) => {
-    const {
-        link,
-        src,
-        isAvailable,
-        isFeatured,
-        notAvailableDisclaimer,
-        id,
-        track,
-        title
-    } = props;
+  const {
+    link,
+    src,
+    isAvailable,
+    isFeatured,
+    notAvailableDisclaimer,
+    id,
+    track,
+    title
+  } = props;
 
-    const handleClick = (e) => {
-        if (isAvailable) {
-            track();
-        } else {
-            e.preventDefault();
-        }
-    };
+  const handleClick = (e) => {
+    if (isAvailable) {
+      track();
+    } else {
+      e.preventDefault();
+    }
+  };
 
-    const className = classNames(namespace, {
-        [`${namespace}__featured`]: isFeatured,
-        [`${namespace}__not-available`]: !isAvailable,
-    });
+  const className = classNames(namespace, {
+    [`${namespace}__featured`]: isFeatured,
+    [`${namespace}__not-available`]: !isAvailable,
+  });
 
-    return (
-        <li className={className} key={id}>
-            <a
-                href={link}
-                className={`${namespace}__link`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleClick}
+  return (
+    <li className={className} key={id}>
+        <a
+            href={link}
+            className={`${namespace}__link`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleClick}
+            alt={title}
+        >
+            {
+                !isAvailable
+                && <span className={`${namespace}__not-available-disclaimer`}>{notAvailableDisclaimer}</span>
+            }
+            <img
+                src={src}
                 alt={title}
-            >
-                {
-                    !isAvailable
-                    && <span className={`${namespace}__not-available-disclaimer`}>{notAvailableDisclaimer}</span>
-                }
-                <img
-                    src={src}
-                    alt={title}
-                    className={`${namespace}__img`}
-                />
-                <h3 className={`${namespace}__img_title`}>{title}</h3>
-            </a>
-        </li>
-    );
+                className={`${namespace}__img`}
+            />
+            <h3 className={`${namespace}__img_title`}>{title}</h3>
+        </a>
+    </li>
+  );
 };
 
 Image.propTypes = {
-    link: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    isAvailable: PropTypes.bool.isRequired,
-    isFeatured: PropTypes.bool.isRequired,
-    notAvailableDisclaimer: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    track: PropTypes.func.isRequired,
+  link: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  isAvailable: PropTypes.bool.isRequired,
+  isFeatured: PropTypes.bool.isRequired,
+  notAvailableDisclaimer: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  track: PropTypes.func.isRequired,
 };
 
 export default Image;

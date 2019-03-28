@@ -6,23 +6,23 @@ import classNames from 'classnames';
 const namespace = 'images';
 
 const useTracking = (message) => {
-    const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-    const track = () => {
-        const newCount = count + 1;
-        setCount(newCount);
-    };
+  const track = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+  };
 
-    console.log(message, count);
+  console.log(message, count);
 
-    return [count, track];
+  return [count, track];
 };
 
 const Images = (props) => {
-    const { images, title, notAvailableDisclaimer } = props;
-    const [count, track] = useTracking('Times the image carousel was clicked:');
+  const { images, title, notAvailableDisclaimer } = props;
+  const [count, track] = useTracking('Times the image carousel was clicked:');
 
-    return (
+  return (
         <div className={namespace}>
             <h1 key="title" className={`${namespace}__title`}>
                 {title}
@@ -31,21 +31,21 @@ const Images = (props) => {
             <ul key={namespace} className={`${namespace}__list`}>
                 {
                     images.map((image) => {
-                        const handleClick = (e) => {
-                            if (image.isAvailable) {
-                                console.log(`Image clicked was #${image.key}`);
-                                track();
-                            } else {
-                                e.preventDefault();
-                            }
-                        };
-                        const baseClassName = 'image';
-                        const className = classNames(baseClassName, {
-                            [`${baseClassName}__featured`]: image.isFeatured,
-                            [`${baseClassName}__not-available`]: !image.isAvailable,
-                        });
+                      const handleClick = (e) => {
+                        if (image.isAvailable) {
+                          console.log(`Image clicked was #${image.key}`);
+                          track();
+                        } else {
+                          e.preventDefault();
+                        }
+                      };
+                      const baseClassName = 'image';
+                      const className = classNames(baseClassName, {
+                        [`${baseClassName}__featured`]: image.isFeatured,
+                        [`${baseClassName}__not-available`]: !image.isAvailable,
+                      });
 
-                        return (
+                      return (
                             <li className={className} key={image.id}>
                                 <a
                                     href={image.link}
@@ -67,18 +67,18 @@ const Images = (props) => {
                                     <h3 className={`${baseClassName}__img_title`}>{image.title}</h3>
                                 </a>
                             </li>
-                        );
+                      );
                     })
                 }
             </ul>
         </div>
-    );
+  );
 };
 
 Images.propTypes = {
-    images: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-    notAvailableDisclaimer: PropTypes.string.isRequired
+  images: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  notAvailableDisclaimer: PropTypes.string.isRequired
 };
 
 export default Images;
