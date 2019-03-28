@@ -31,6 +31,7 @@ exports[`Images component renders the images component with the list of images 1
     <Image
       id={2}
       isAvailable={false}
+      isFeatured={false}
       link="https://www.amazon.com/Marvels-Spider-Man-PlayStation-4/dp/B01GW8YDLK/ref=sr_1_4?keywords=ps4+games&qid=1551459125&s=gateway&sr=8-4"
       notAvailableDisclaimer="not available"
       src="https://m.media-amazon.com/images/I/81d6JU6g1pL._AC_UL872_FMwebp_QL65_.jpg"
@@ -50,6 +51,7 @@ exports[`Images component renders the images component with the list of images 1
     <Image
       id={4}
       isAvailable={false}
+      isFeatured={false}
       link="https://www.amazon.com/Assassins-Creed-Odyssey-PlayStation-4-Standard/dp/B07DKYN13M/ref=sr_1_5?keywords=ps4+games&qid=1551460416&s=gateway&sr=8-5"
       notAvailableDisclaimer="not available"
       src="https://m.media-amazon.com/images/I/81da48KsFpL._AC_UL872_FMwebp_QL65_.jpg"

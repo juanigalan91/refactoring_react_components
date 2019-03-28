@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 const namespace = 'images';
 
-const useTracking = () => {
+const useTracking = (message) => {
     const [count, setCount] = useState(0);
 
     const track = () => {
@@ -13,14 +13,14 @@ const useTracking = () => {
         setCount(newCount);
     };
 
-    console.log(`Items carousel was clicked ${count} times.`);
+    console.log(message, count);
 
     return [count, track];
 };
 
 const Images = (props) => {
     const { images, title, notAvailableDisclaimer } = props;
-    const [count, track] = useTracking();
+    const [count, track] = useTracking('Times the image carousel was clicked:');
 
     return (
         <div className={namespace}>
