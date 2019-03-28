@@ -76,7 +76,12 @@ const Images = (props) => {
 };
 
 Images.propTypes = {
-  images: PropTypes.array.isRequired,
+  images: PropTypes.arrayOf(PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })).isRequired,
   title: PropTypes.string.isRequired,
   notAvailableDisclaimer: PropTypes.string.isRequired
 };
