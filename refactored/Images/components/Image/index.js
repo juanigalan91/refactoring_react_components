@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 const namespace = 'image';
 const Image = (props) => {
     const {
-        key,
         link,
         src,
         title
     } = props;
 
     return (
-        <li className={namespace} key={key}>
+        <li className={namespace}>
             <a href={link} className={`${namespace}__link`} target="_blank" rel="noopener noreferrer">
                 <img
                     src={src}
@@ -25,7 +24,6 @@ const Image = (props) => {
 };
 
 Image.propTypes = {
-    key: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired

@@ -1,7 +1,7 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Images from '..';
-import images from '../../../data';
+import images from '../../../../../data';
 
 describe('Images component', () => {
     it('renders the images component with the list of images', () => {
