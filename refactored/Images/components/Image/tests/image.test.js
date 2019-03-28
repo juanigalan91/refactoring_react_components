@@ -2,8 +2,8 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Image from '..';
 
-describe('Images component', () => {
-    it('renders the images component with the list of images', () => {
+describe('Image component', () => {
+    it('renders a simple Image component', () => {
         const renderer = new ShallowRenderer();
         const image = {
             id: 1,

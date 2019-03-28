@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Images component renders the images component with the list of images 1`] = `
+exports[`Image component renders a simple Image component 1`] = `
 <li
   className="image"
 >
