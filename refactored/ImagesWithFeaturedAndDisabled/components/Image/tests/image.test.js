@@ -1,11 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Image from '..';
-import { render, cleanup, fireEvent } from 'react-testing-library';
-
-afterEach(() => {
-    cleanup();
-});
 
 const image = {
     id: 1,
@@ -47,28 +42,5 @@ describe('Image component', () => {
         );
 
         expect(renderer.render(component)).toMatchSnapshot();
-    });
-
-    it('invokes track function since the image is available', () => {
-        const component = (
-            <Image {...image} />
-        );
-
-        const { container } = render(component);
-
-        const link = container.querySelector('.image__link');
-        fireEvent.click(link);
-
-        expect(image.track).toBeCalled();
-    });
-
-    it('does not invoke track function since the image is not available', () => {
-        const notCalledTrack = jest.fn();
-        const { container } = render(<Image {...image} isAvailable={false} track={notCalledTrack} />);
-
-        const link = container.querySelector('.image__link');
-        fireEvent.click(link);
-
-        expect(notCalledTrack).not.toBeCalled();
     });
 });

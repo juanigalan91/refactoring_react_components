@@ -8,7 +8,6 @@ exports[`Image component renders a simple image component 1`] = `
     alt="Red Dead Redemption 2"
     className="image__link"
     href="https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=sr_1_3?keywords=ps4+games&qid=1551459125&s=gateway&sr=8-3"
-    onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
   >
@@ -34,7 +33,6 @@ exports[`Image component renders a simple image component that is not available 
     alt="Red Dead Redemption 2"
     className="image__link"
     href="https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=sr_1_3?keywords=ps4+games&qid=1551459125&s=gateway&sr=8-3"
-    onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
   >
@@ -65,7 +63,6 @@ exports[`Image component renders a simple image component that is not featured 1
     alt="Red Dead Redemption 2"
     className="image__link"
     href="https://www.amazon.com/Red-Dead-Redemption-2-PlayStation-4/dp/B01M5DZ525/ref=sr_1_3?keywords=ps4+games&qid=1551459125&s=gateway&sr=8-3"
-    onClick={[Function]}
     rel="noopener noreferrer"
     target="_blank"
   >
