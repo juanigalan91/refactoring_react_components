@@ -12,16 +12,16 @@ const Games = (props) => {
         {
           games.map((game) => {
             const baseClassName = 'game';
-            const className = classNames(baseClassName, {
+            const className = classNames(`${baseClassName}__link`, {
               [`${baseClassName}__featured`]: game.isFeatured,
               [`${baseClassName}__not-available`]: !game.isAvailable,
             });
 
             return (
-              <li className={className} key={game.id}>
+              <li className={baseClassName} key={game.id}>
                 <a
                   href={game.link}
-                  className={`${baseClassName}__link`}
+                  className={className}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => {
@@ -53,7 +53,9 @@ Games.propTypes = {
     link: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    isFeatured: PropTypes.bool,
+    isAvailable: PropTypes.bool,
   })).isRequired,
   title: PropTypes.string.isRequired,
   notAvailableDisclaimer: PropTypes.string.isRequired
