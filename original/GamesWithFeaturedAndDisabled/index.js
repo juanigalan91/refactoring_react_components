@@ -2,34 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const namespace = 'images';
-const Images = (props) => {
-  const { images, title, notAvailableDisclaimer } = props;
+const namespace = 'games';
+const Games = (props) => {
+  const { games, title, notAvailableDisclaimer } = props;
   return (
     <div className={namespace}>
       <h1 key="title" className={`${namespace}__title`}>{title}</h1>
       <ul key={namespace} className={`${namespace}__list`}>
         {
-          images.map((image) => {
-            const baseClassName = 'image';
+          games.map((game) => {
+            const baseClassName = 'game';
             const className = classNames(baseClassName, {
-              [`${baseClassName}__featured`]: image.isFeatured,
-              [`${baseClassName}__not-available`]: !image.isAvailable,
+              [`${baseClassName}__featured`]: game.isFeatured,
+              [`${baseClassName}__not-available`]: !game.isAvailable,
             });
 
             return (
-              <li className={className} key={image.id}>
-                <a href={image.link} className={`${baseClassName}__link`} target="_blank" rel="noopener noreferrer">
+              <li className={className} key={game.id}>
+                <a
+                  href={game.link}
+                  className={`${baseClassName}__link`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (!game.isAvailable) e.preventDefault();
+                  }}
+                >
                   {
-                    !image.isAvailable
+                    !game.isAvailable
                     && <span className={`${baseClassName}__not-available-disclaimer`}>{notAvailableDisclaimer}</span>
                   }
                   <img
-                    src={image.src}
-                    alt={image.title}
+                    src={game.src}
+                    alt={game.title}
                     className={`${baseClassName}__img`}
                   />
-                  <h3 className={`${baseClassName}__img_title`}>{image.title}</h3>
+                  <h3 className={`${baseClassName}__img_title`}>{game.title}</h3>
                 </a>
               </li>
             );
@@ -40,8 +48,8 @@ const Images = (props) => {
   );
 };
 
-Images.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
+Games.propTypes = {
+  games: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
@@ -51,4 +59,4 @@ Images.propTypes = {
   notAvailableDisclaimer: PropTypes.string.isRequired
 };
 
-export default Images;
+export default Games;

@@ -1,31 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const namespace = 'images';
-const Images = (props) => {
-  const { images, title } = props;
+const namespace = 'games';
+const Games = (props) => {
+  const { games, title } = props;
   return (
     <div className={namespace}>
       <h1 key="title" className={`${namespace}__title`}>{title}</h1>
       <ul key={namespace} className={`${namespace}__list`}>
         {
-          images.map((image) => {
-            const baseClassName = 'image';
+          games.map((game) => {
+            const baseClassName = 'game';
 
             return (
-              <li className={baseClassName} key={image.id}>
+              <li className={baseClassName} key={game.id}>
                 <a
-                  href={image.link}
+                  href={game.link}
                   className={`${baseClassName}__link`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
-                      src={image.src}
-                      alt={image.title}
+                      src={game.src}
+                      alt={game.title}
                       className={`${baseClassName}__img`}
                   />
-                  <h3 className={`${baseClassName}__img_title`}>{image.title}</h3>
+                  <h3 className={`${baseClassName}__img_title`}>{game.title}</h3>
                 </a>
               </li>
             );
@@ -36,8 +36,8 @@ const Images = (props) => {
   );
 };
 
-Images.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
+Games.propTypes = {
+  games: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
@@ -46,4 +46,4 @@ Images.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-export default Images;
+export default Games;

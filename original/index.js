@@ -1,32 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './original.scss';
-import Images from './Images';
-import ImagesWithFeaturedAndDisabled from './ImagesWithFeaturedAndDisabled';
-import ImagesWithCounterClick from './ImagesWithCounterClick';
-import images from '../data';
+import Games from './Games';
+import GamesWithFeaturedAndDisabled from './GamesWithFeaturedAndDisabled';
+import GaemsWithCounterClick from './GamesWithCounterClick';
+import games from '../data';
 
 /* global document */
 const root = document.getElementById('root');
 const baseProps = {
-  images,
+  games,
   title: 'Best PS4 Games of 2018'
 };
 
 ReactDOM.render(
   [
-        <Images
-            key="images"
+        <Games
+            key="games"
             {...baseProps}
         />,
-        <ImagesWithFeaturedAndDisabled
-            key="images-with-featured-and-disabled"
+        <GamesWithFeaturedAndDisabled
+            key="games-with-featured-and-disabled"
             {...baseProps}
             title="Featured PS4 Games of 2018"
             notAvailableDisclaimer="Not Available"
         />,
-        <ImagesWithCounterClick
-            key="images-with-counter-click"
+        <GaemsWithCounterClick
+            key="games-with-counter-click"
             {...baseProps}
             title="Featured PS4 Games of 2018"
             notAvailableDisclaimer="Not Available"

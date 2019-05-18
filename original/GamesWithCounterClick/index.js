@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const namespace = 'images';
+const namespace = 'games';
 
 const useTracking = (message) => {
   const [count, setCount] = useState(0);
@@ -18,9 +18,9 @@ const useTracking = (message) => {
   return [count, track];
 };
 
-const Images = (props) => {
-  const { images, title, notAvailableDisclaimer } = props;
-  const [count, track] = useTracking('Times the image carousel was clicked:');
+const Games = (props) => {
+  const { games, title, notAvailableDisclaimer } = props;
+  const [count, track] = useTracking('Times the game carousel was clicked:');
 
   return (
         <div className={namespace}>
@@ -30,41 +30,41 @@ const Images = (props) => {
             <span className={`${namespace}__visits`}>Visits: {count}</span>
             <ul key={namespace} className={`${namespace}__list`}>
                 {
-                    images.map((image) => {
+                    games.map((game) => {
                       const handleClick = (e) => {
-                        if (image.isAvailable) {
-                          console.log(`Image clicked was #${image.key}`);
+                        if (game.isAvailable) {
+                          console.log(`Gamme clicked was #${game.key}`);
                           track();
                         } else {
                           e.preventDefault();
                         }
                       };
-                      const baseClassName = 'image';
+                      const baseClassName = 'game';
                       const className = classNames(baseClassName, {
-                        [`${baseClassName}__featured`]: image.isFeatured,
-                        [`${baseClassName}__not-available`]: !image.isAvailable,
+                        [`${baseClassName}__featured`]: game.isFeatured,
+                        [`${baseClassName}__not-available`]: !game.isAvailable,
                       });
 
                       return (
-                            <li className={className} key={image.id}>
+                            <li className={className} key={game.id}>
                                 <a
-                                    href={image.link}
+                                    href={game.link}
                                     className={`${baseClassName}__link`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={handleClick}
-                                    alt={image.title}
+                                    alt={game.title}
                                 >
                                     {
-                                        !image.isAvailable
+                                        !game.isAvailable
                                         && <span className={`${baseClassName}__not-available-disclaimer`}>{notAvailableDisclaimer}</span>
                                     }
                                     <img
-                                        src={image.src}
-                                        alt={image.title}
+                                        src={game.src}
+                                        alt={game.title}
                                         className={`${baseClassName}__img`}
                                     />
-                                    <h3 className={`${baseClassName}__img_title`}>{image.title}</h3>
+                                    <h3 className={`${baseClassName}__img_title`}>{game.title}</h3>
                                 </a>
                             </li>
                       );
@@ -75,8 +75,8 @@ const Images = (props) => {
   );
 };
 
-Images.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
+Games.propTypes = {
+  games: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
@@ -86,4 +86,4 @@ Images.propTypes = {
   notAvailableDisclaimer: PropTypes.string.isRequired
 };
 
-export default Images;
+export default Games;
