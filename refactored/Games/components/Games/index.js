@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from '../Image';
+import Game from '../Game';
 
-const namespace = 'images';
-const Images = (props) => {
-  const { images, title } = props;
+const namespace = 'games';
+const Games = (props) => {
+  const { games, title } = props;
   return (
         <div className={namespace}>
             <h1 key="title" className={`${namespace}__title`}>{title}</h1>
             <ul key={namespace} className={`${namespace}__list`}>
                 {
-                    images.map(image => <Image {...image} key={image.id} />)
+                    games.map(image => <li><Game {...image} key={image.id} /></li>)
                 }
             </ul>
         </div>
   );
 };
 
-Images.propTypes = {
-  images: PropTypes.array.isRequired,
+Games.propTypes = {
+  games: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired
 };
 
-export default Images;
+export default Games;
